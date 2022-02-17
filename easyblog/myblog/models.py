@@ -25,6 +25,7 @@ class Post(models.Model):
     photo = models.ImageField(upload_to='photo/%Y/%m/%d/', blank=True)
     tags = models.ManyToManyField('Tag', blank=True)
     categories = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name='Категории')
+    views = models.IntegerField(default=0, verbose_name='Кол-во просмотров')
 
     def __str__(self):
         return self.title

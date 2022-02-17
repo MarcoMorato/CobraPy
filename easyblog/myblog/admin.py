@@ -3,7 +3,7 @@ from .models import Post, Tag, Category
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'categories', 'slug', 'photo', 'created_at')
+    list_display = ('id', 'title', 'categories', 'views', 'slug', 'photo', 'created_at')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
 

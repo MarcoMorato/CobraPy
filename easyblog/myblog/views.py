@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.views.generic import ListView, DetailView
+from django.db.models import F
 
 
 def test(request):
@@ -36,6 +37,9 @@ class Single(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+        self.object.views = F('views') + 1  # для коректного прибавления просмотров
+        self.object.save()
+        self.object.refresh_from_db()  # для правильного отображения просмотров из базы данных
         return context
 
 
