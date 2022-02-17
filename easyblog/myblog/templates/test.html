@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap"
+          rel="stylesheet">
+    <title>Mogo</title>
+</head>
+<body>
+<!--<div class="navbar">-->
+<!--    <div class="bar-item">Home</div>-->
+<!--    <div class="bar-item">Friends</div>-->
+<!--    <div class="bar-item">Dojo</div>-->
+
+<!--</div>-->
+
+
+<!--<div class="container">-->
+<!--    <div class="left">Новости</div>-->
+<!--    <div class="right">еще</div>-->
+<!--</div>-->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="https://zacharypiell.com/images/python.png" width="40" height="35">
+                <h1>CobraPy</h1>
+            </div>
+
+            <nav class="nav">
+
+                <a class="nav__link" href="#">ABOUT</a>
+                <a class="nav__link" href="#">SERVICE</a>
+                <a class="nav__link" href="#">WORK</a>
+                <a class="nav__link" href="#">Blog</a>
+                <a class="nav__link" href="#">CONTACT</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <h2 class="intro__subtitle">Python DoJo</h2>
+            <h1 class="intro__title">Welcom to CobraPy</h1>
+            <a class="btn" href="{% url 'content'%}">Learn more</a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        © 2022, CobraPy. При копировании материала ссылка на источник обязательна.
+        <div class="footer__link">
+
+
+                <a class="footer__link" href="#">Email: cobrapy@yandex.ru</a>
+                <a class="footer__link" href="#">Telegram:@cobrapy</a>
+                <a class="footer__link" href="#">Реклама</a>
+
+<!--            <br>Email: <a id="123" style="color:white" href="mailto:pythonistru@yandex.ru">cobrapy@yandex.ru</a><br>-->
+<!--            Telegram: <a href="https://t.me/cobrapy">@aldrson</a><br>-->
+<!--            <a href="https://pythonist.ru/ads/">Реклама</a>-->
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

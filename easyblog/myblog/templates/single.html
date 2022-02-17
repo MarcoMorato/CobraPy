@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <div class="container">
+
+
+        <div class="card-single">
+
+
+        {% if item.photo %}
+        <a href="{{ item.get_absolute_url }}"> <img src="{{ item.photo.url }}" class="card-img-single" alt="..."></a>
+        {% else %}
+        <a href="{{ item.get_absolute_url }}"> <img
+                src="https://www.ubuy.com.tr/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODFvSGZ2Q3dQU0wuX0FDX1NMMTUwMF8uanBn.jpg"
+                class="card-img-single" alt="..."></a>
+        {% endif %}
+
+        <div class="card-body-single">
+
+                    {% for tag in item.tags.all %}
+                        <a href="{% url 'index'%}">{{ tag.title }}</a>
+
+                    {% endfor %}
+
+                <a class="card-title" href="{{ item.get_absolute_url }}"><h3>{{item.title}}</h3></a>
+                <p class="card-text" >{{ item.content|linebreaksbr}}</p>
+                <p class="card-date">{{item.created_at}}</p>
+            </div>
+
+
+    </div>
+
+    </div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+
+<!--    <link rel="stylesheet" href="{% static 'css/test.css' %}">-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap"-->
+<!--          rel="stylesheet">-->
+<!--    <title>Mogo</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="header">-->
+<!--    <div class="container">-->
+<!--        <div class="header__inner">-->
+<!--            <div class="header__logo">-->
+<!--                <a href=" {% url 'content'%} ">-->
+<!--                    <img src="https://zacharypiell.com/images/python.png" width="40" height="35"></a>-->
+<!--                <h1>CobraPy</h1>-->
+<!--            </div>-->
+
+<!--            <nav class="nav">-->
+
+<!--                <a class="nav__link" href="#">ABOUT</a>-->
+<!--                <a class="nav__link" href="#">SERVICE</a>-->
+<!--                <a class="nav__link" href="#">WORK</a>-->
+<!--                <a class="nav__link" href="#">Blog</a>-->
+<!--                <a class="nav__link" href="#">CONTACT</a>-->
+<!--            </nav>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</header>-->
+<!--<div class="intro">-->
+<!--    <div class="container">-->
+<!--        <div class="dojo">-->
+<!--            <h2 class="intro__subtitle">Python DoJo</h2>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img src="https://pythonist.ru/wp-content/uploads/2021/12/ecommerce-300x150.png" class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h1 class="card-title">Спики</h1>-->
+<!--                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+<!--                    card's content.В современном цифровом мире нас засыпают бесконечным потоком информации. Мы постоянно прокручиваем социальные сети и 24 часа в сутки имеем доступ к новостным каналам. Таким образом, существует множество новостей, которые нам надо знать и мы должны быть в состоянии их все быстро переварить.</p>-->
+<!--                <p class="card-date">12.08.2022</p>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+        <div class="card-single">
+            {% if item.photo %}
+            <img  src="{{ item.photo.url }}" class="card-img-top-single" alt="...">
+            {% else %}
+            <img  src=" {% static 'img/i.webp' %} " class="card-img-top-single" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <a class="card-title" href="#"><h3>{{item.title}}</h3></a>
+                <p class="card-text">{{ item.content|linebreaks }}</p>
+                <p class="card-date">{{item.created_at}}</p>
+            </div>
+
+<!--        </div>-->
+
+
+
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="footer">-->
+
+<!--        © 2022, CobraPy. При копировании материала ссылка на источник обязательна.-->
+<!--        <div class="footer__link">-->
+
+
+<!--            <a class="footer__link" href="#">Email: cobrapy@yandex.ru</a>-->
+<!--            <a class="footer__link" href="#">Telegram:@cobrapy</a>-->
+<!--            <a class="footer__link" href="#">Реклама</a>-->
+
+<!--            &lt;!&ndash;            <br>Email: <a id="123" style="color:white" href="mailto:pythonistru@yandex.ru">cobrapy@yandex.ru</a><br>&ndash;&gt;-->
+<!--            &lt;!&ndash;            Telegram: <a href="https://t.me/cobrapy">@aldrson</a><br>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <a href="https://pythonist.ru/ads/">Реклама</a>&ndash;&gt;-->
+<!--        </div>-->
+
+<!--</div>-->
+
+
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,188 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/quote-bg.png);
+}
+
+header {
+  background-image: url(../img/home-bg.png);
+  text-align: center;
+  padding:  0;
+  margin-bottom: 30px; }
+  header .bg-cover {
+  background: rgba(0, 0, 0, 0.7); }
+
+.colortext{
+    color: #3f79ce;
+}
+
+
+  .logo {
+
+    font-size: 75px;
+    font-family: 'Kaushan Script', cursive;
+    color: #ffc107;
+    text-decoration: none;
+     }
+  .logo:hover{
+    color: #3f79ce;
+  }
+
+  header h5.logo-text {
+
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    color: #fff;
+
+  }
+
+  header .navbar li.nav-item a.nav-link {
+    font-family: "Montserrat-Bold";
+    color: #ffffff;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem; }
+
+
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin-right: 0px;
+
+
+
+    }
+
+.card-index {
+
+    display: flex;
+    text-align: center;
+    width: 100%;
+    max-width: 880px; /* максимальная ширина блока */
+    margin: 50px auto; /* Отступ от левому краю(от блока интро) чтобы был по центру */
+    height: 200px;
+}
+
+.card-title{
+    text-decoration: none;
+    color: #333;
+
+}
+.card-title:hover{
+    color: #3f79ce;
+}
+.card-body{
+    background: #f7f6df;
+    width: 120px;
+      height: auto;
+
+
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+
+}
+
+
+
+
+
+.card-img-top{
+    width: 300px;
+    height: 200px;
+
+}
+.card-date {
+    display:block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+footer {
+    background-image: url(../img/home-bg.png);
+    text-align: center;
+    padding:  0;
+    margin-bottom: 30px;
+    }
+    .container-bg {
+
+    background: rgba(0, 0, 0, 0.7); }
+
+    footer h2.logo {
+
+    font-size: 75px;
+    font-family: 'Kaushan Script', cursive;
+    color: #ffc107;
+     }
+
+
+     .copyright{
+        background: #fff;
+        padding-top: 10px;
+
+
+     }
+   .container-bg{
+        color: #fff;
+   }
+
+.main-container{
+    display:flex;
+}
+.left {
+    width: 100%;
+    max-width: 400px;
+}
+
+.top-posts{
+    padding:40px 20px ;
+}
+
+.card-single{
+    border-left: 1px;
+    border-left-style: solid;
+    border-left-color: #ced4dd;
+    border-right-width: 1px ;
+    border-right-style: solid;
+    border-right-color: #ced4dd;
+
+
+    text-align:center;
+    width: 100%;
+    max-width: 880px; /* максимальная ширина блока */
+    margin: 50px auto; /* Отступ от левому краю(от блока интро) чтобы был по центру */
+    height: auto;
+}
+.card-body-single{
+    padding: 30px;
+    background: #f7f6df;
+    width: auto;
+      height: auto;
+
+
+
+}
+
+.card-img-single{
+    width: 600px;
+    height: 300px;
+}

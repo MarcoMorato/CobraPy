@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="main-container">
+
+    <div class="container">
+        {% for item in posts %}
+
+        <div class="card-index">
+
+
+        {% if item.photo %}
+        <a href="{{ item.get_absolute_url }}"> <img src="{{ item.photo.url }}" class="card-img-top" alt="..."></a>
+        {% else %}
+        <a href="{{ item.get_absolute_url }}"> <img
+                src="https://www.ubuy.com.tr/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODFvSGZ2Q3dQU0wuX0FDX1NMMTUwMF8uanBn.jpg"
+                class="card-img-top" alt="..."></a>
+        {% endif %}
+
+        <div class="card-body">
+
+                    {% for tag in item.tags.all %}
+                        <a href="">{{ tag.title }}</a>
+
+                    {% endfor %}
+
+                <a class="card-title" href="{{ item.get_absolute_url }}"><h3>{{item.title}}</h3></a>
+                <p class="card-text" >{{ item.content|truncatewords:30 }}</p>
+                <p class="card-date">{{item.created_at}}</p>
+            </div>
+
+
+    </div>
+        {% endfor %}
+    </div>
+    <div class="left">
+        <form role="search" method="get" class="search-form" action="{% url 'search' %}">
+				<label>
+					<span class="screen-reader-text">Найти:</span>
+					<input type="search" class="search-field" placeholder="Поиск…" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Поиск">
+        </form>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
