@@ -30,6 +30,7 @@ class Content(ListView):
 
 class Single(DetailView):
     model = Post
+    # category = Category.objects.all()
     template_name = 'single.html'
     context_object_name = 'item'
 
@@ -37,6 +38,7 @@ class Single(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+        # context['category'] = self.category
         self.object.views = F('views') + 1  # для коректного прибавления просмотров
         self.object.save()
         self.object.refresh_from_db()  # для правильного отображения просмотров из базы данных
@@ -62,23 +64,25 @@ class Search(ListView):
 
 class Index(ListView):
     model = Post
-    category = Category.objects.all()
+
     template_name = 'index.html'
     context_object_name = 'posts'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
-        context['category'] = self.category
+
         return context
 
 
 class PostByCategory(ListView):
     model = Post
+
     template_name = 'category.html'
     context_object_name = 'posts'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(PostByCategory, self).get_context_data()
+
         return context
 
     def get_queryset(self):

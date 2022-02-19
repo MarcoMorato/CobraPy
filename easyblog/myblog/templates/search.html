@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<div class="main-container">
+
 
     <div class="container">
         {% for item in posts %}
@@ -34,18 +34,8 @@
     </div>
         {% endfor %}
     </div>
-    <div class="left">
-        <form role="search" method="get" class="search-form" action="{% url 'search' %}">
-				<label>
-					<span class="screen-reader-text">Найти:</span>
-					<input type="search" class="search-field" placeholder="Поиск…" value="" name="s">
-				</label>
-				<input type="submit" class="search-submit" value="Поиск">
-        </form>
 
 
-    </div>
 
-</div>
 
 {% endblock %}
