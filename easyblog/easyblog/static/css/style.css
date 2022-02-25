@@ -1,5 +1,5 @@
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6,  blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -68,6 +68,7 @@ header {
 
 
 
+
     }
 
 .card-index {
@@ -77,7 +78,7 @@ header {
     width: 100%;
     max-width: 880px; /* максимальная ширина блока */
     margin: 50px auto; /* Отступ от левому краю(от блока интро) чтобы был по центру */
-    height: 200px;
+    height: auto;
 }
 
 .card-title{
@@ -185,4 +186,42 @@ footer {
 .card-img-single{
     width: 600px;
     height: 300px;
+}
+
+.popular_posts{
+    margin: 20px;
+    }
+.pop-bg{
+    background: #efefef none repeat scroll 0 0;
+    color: #000;
+    font-family: Geometria;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    padding: 21px 25px;
+    text-transform: uppercase;
+
+
+
+}
+.pop-post{
+    margin: 30px;
+}
+
+.pop-img{
+    width: 150px;
+    height: 90px;
+}
+.pop-title{
+    text-decoration: none;
+    color: #333;
+}
+
+.pop-date{
+
+}
+
+.pagination{
+    margin: 0 50%;
 }

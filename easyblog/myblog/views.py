@@ -1,7 +1,9 @@
-from django.shortcuts import render
+import requests
+from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import ListView, DetailView
 from django.db.models import F
+from .forms import PostForm
 
 
 def test(request):
@@ -67,6 +69,7 @@ class Index(ListView):
 
     template_name = 'index.html'
     context_object_name = 'posts'
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
@@ -89,3 +92,14 @@ class PostByCategory(ListView):
         return Post.objects.filter(categories_id=self.kwargs['categories_id'])
 
         # return Post.objects.filter(categories__pk=self.kwargs['pk'])
+
+
+def add_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = Post.objects.create(**form.cleaned_data)
+            return redirect(post)
+    else:
+        form = PostForm()
+    return render(request, 'add_post.html', {'form': form})
