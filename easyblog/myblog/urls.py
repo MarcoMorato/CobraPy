@@ -9,5 +9,5 @@ urlpatterns = [
     path('single/<int:pk>/', Single.as_view(), name='single'),
     path('category/<int:categories_id>', PostByCategory.as_view(), name='category'),
     path('search/', Search.as_view(), name='search'),
-    path('add_post/', add_post, name='add_post'),
+    path('add_post/', AddPost.as_view(), name='add_post'),
 ]

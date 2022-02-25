@@ -26,7 +26,7 @@
             {% endfor %}
 
             <a class="card-title" href="{{ item.get_absolute_url }}"><h3>{{item.title}}</h3></a>
-            <p class="card-text">{{ item.content|truncatewords:25 }}</p>
+            <p class="card-text">{{ item.content|truncatewords:15 }}</p>
             <p class="card-date">{{item.created_at}}</p>
         </div>
 
