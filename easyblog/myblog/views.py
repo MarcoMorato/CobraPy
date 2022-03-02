@@ -5,6 +5,26 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.db.models import F
 from .forms import PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Вы успещно зарегестрировались')
+            return redirect('login')
+        else:
+            messages.error(request, 'Ошибка регистрации')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
+
+def login(request):
+    return render(request, 'login.html')
 
 
 def test(request):
